@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignUp Here</title>
+    <style>
+        *{
+          margin-bottom: 20px;
+          padding: 0;
+          box-sizing: border-box;
+          
+        }
+        body{
+          display: flex;
+          height: 100vh;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(135deg, #71b7ed, #9b59b6)
+        }
+        form{
+            max-width: 700px;
+            width: 100%;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+    
+          }
+    </style>
+  </head>
+  <body>
+    <h1>
+        Kindly Provide The Following Information
+    </h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type='submit' value='Submit'/>
+    
+    </form>
+    
+    
+  </body>
+</html>
+
+
+
+
+

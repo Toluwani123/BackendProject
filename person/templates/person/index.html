@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <title>SignUp Here</title>
+    <style>
+      *{
+        margin-bottom: 20px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Amatic SC', cursive;
+        
+      }
+      body{
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #71b7ed, #9b59b6)
+      }
+      .form-register{
+        max-width: 700px;
+        width: 100%;
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+      }
+      .text{
+        font-size: 25px;
+        font-weight: 500;
+
+      }
+      .input-box{
+        display: block;
+        width: calc(100% / 2 - 20px);
+        height: 100%%;
+        width: 100%;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <form class="form-register" action="" method="POST">
+    
+        {%csrf_token%}
+        <div class='text'>
+          <h1> Sign Up Here</h1>
+        </div>
+        <label>
+            {{form.username.label}}
+        </label>
+        <div class="input-box">
+        {{form.username}}
+        <div>
+        <label>
+            {{form.email.label}}
+    
+        </label>
+        <div class="input-box">
+          {{form.email}}
+          <div>
+        <label>
+            {{form.password1.label}}
+    
+        </label>
+        <div class="input-box">
+          {{form.password1}}
+          <div>
+        <label>
+          {{form.password2.label}}
+  
+      </label>
+      <div class="input-box">
+        {{form.password2}}
+        <div>
+        <input type='submit' value='Submit'/>
+    </form>
+    <a href='{% url 'login'%}'>Already Have An Account?</a>
+  </body>
+</html>

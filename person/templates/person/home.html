@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <style>
+        *{
+            margin-bottom: 20px;
+            padding: 0;
+            box-sizing: border-box;
+            
+          }
+        body{
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #71b7ed, #9b59b6)
+        }
+        .welcome{
+            max-width: 700px;
+            width: 100%;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 10px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+    
+        }
+        h1{
+            font-family: "Audiowide", sans-serif;
+            text-shadow: 3px 3px 3px #ababab
+        }
+        h2{
+            font-family: "Trirong", serif;
+        }
+    </style>
+  </head>
+  <body>
+    {%if request.user.is_authenticated%}
+    <div class='welcome'>
+        
+
+        {% for use in user %}
+          <h1>  Hello {{use.first_name}} {{use.last_name}}</h1>
+        {% endfor %}
+        <div class='extra'>
+           <h2> This is your email address: {{request.user.email}}</h2>
+        </div>
+        <a href="{%url 'logout'%}">Logout</a>
+    {%else%}
+        <a href="{%url 'login'%}">
+            Login
+        </a>
+    {%endif%}
+    </div>
+    
+
+
+    
+  </body>
+</html>
