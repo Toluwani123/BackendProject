@@ -1,6 +1,0 @@
-# BackendProject
-This project was carried out using the Django Framework.
-I was asked to Create a Login System which after Login is carried out, the user's name and email will display on the home page
-TO run this project on your local device python 3.0 or above and django will need to be installed
-By typing python manage.py runserver in terminal this project will be fit to use.
-
